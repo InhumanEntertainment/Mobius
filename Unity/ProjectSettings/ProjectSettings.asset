@@ -8,8 +8,8 @@ PlayerSettings:
   defaultScreenOrientation: 4
   targetDevice: 2
   targetGlesGraphics: 1
-  targetResolution: 0
-  accelerometerFrequency: 60
+  targetResolution: 7
+  accelerometerFrequency: 0
   companyName: Inhuman Entertainment
   productName: Mobius
   defaultCursor: {fileID: 0}
@@ -64,8 +64,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.LarssonTech.Mobius
-  iPhoneBundleVersion: 1.0
+  iPhoneBundleIdentifier: com.inhuman.mobius
+  iPhoneBundleVersion: 0.1
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 6
   AndroidPreferredInstallLocation: 1
@@ -80,7 +80,7 @@ PlayerSettings:
   StripUnusedMeshComponents: 0
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 10
-  uIPrerenderedIcon: 0
+  uIPrerenderedIcon: 1
   uIRequiresPersistentWiFi: 0
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
@@ -101,7 +101,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: ab619f95d79d4714eaae0913d99ea938, type: 3}
+    - m_Icon: {fileID: 2800000, guid: d6334b32add6a422382e0f537f6c7808, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Android
@@ -124,7 +124,7 @@ PlayerSettings:
   wiiFloatingPointExceptions: 0
   wiiScreenCrashDumps: 1
   wiiMemoryLabelCount: 155
-  wiiMemorySetup: 5effbee7ffffffafbb1f00000000000000000000
+  wiiMemorySetup: 5effbee7ffffff0fab1f00000000000000000000
   XboxTitleId: 
   XboxImageXexPath: 
   XboxSpaPath: 
@@ -145,7 +145,13 @@ PlayerSettings:
   ps3SaveGameSlots: 1
   ps3TrialMode: 0
   flashStrippingLevel: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    data:
+      first: 1
+      second: 
+    data:
+      first: 4
+      second: 
   metroPackageName: 
   metroPackageLogo: 
   metroPackageVersion: 

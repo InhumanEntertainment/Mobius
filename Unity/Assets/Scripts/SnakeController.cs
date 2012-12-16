@@ -22,12 +22,13 @@ public class SnakeController : MonoBehaviour
     public Texture TetureGuidePosition;
 
     float DistanceTraveled = 0;
-    public float StepSpacing = 0.25f;
+    public float StepSpacing = 0.05f;
             
 
     //============================================================================================================================================//
     void Awake()
     {
+		Application.targetFrameRate = 60;
         mesh = new Mesh();
         Tail.Add(Vector3.zero);
     }
