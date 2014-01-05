@@ -113,7 +113,7 @@ Camera:
   m_GameObject: {fileID: 561263607}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 561263607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
@@ -276,12 +276,12 @@ MonoBehaviour:
   Tail: []
   Velocity: {x: 0, y: 0, z: 0}
   Target: {x: 0, y: 0, z: 0}
-  Speed: 25
-  Rotation: 1500
+  Speed: 35
+  Rotation: 1100
   TailMax: 50
   TailWidthStart: .300000012
   TailWidthEnd: .100000001
-  DrawWireframe: 0
+  DrawWireframe: 1
   DrawGuide: 1
   GuideColor: {r: .699999988, g: .800000012, b: 1, a: 1}
   TetureGuideDot: {fileID: 2800000, guid: 18508aaea8550ef4c90a0c79a198f819, type: 3}
