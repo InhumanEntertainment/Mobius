@@ -34,23 +34,22 @@ public class SnakeController : MonoBehaviour
     }
 
     //============================================================================================================================================//
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision.collider.name);
+    }
+
+    //============================================================================================================================================//
     void Update() 
 	{
         if (Time.timeScale > 0)
         {
-            // Get Game Camera //
-            Camera cam = GameObject.Find("GameCamera").camera;
-            var w = cam.pixelWidth;
-            var h = cam.pixelHeight;
-            //Debug.Log(w + " : " + h + " : " + cam.aspect);
-
-
-
             // Controls // 
             //#if UNITY_ANDROID1 || UNITY_IPHONE1
             if (Input.GetMouseButton(0))
             {
-                Target = new Vector3((Input.mousePosition.x / w - 0.5f) * cam.orthographicSize * cam.aspect * 2, (Input.mousePosition.y / h - 0.5f) * cam.orthographicSize * 2, 0);
+                Target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Target.z = 0;
             }
             //#else
             //        if (Input.touchCount > 0)
@@ -58,13 +57,9 @@ public class SnakeController : MonoBehaviour
             //            Target = new Vector3((Input.touches[0].position.x / w - 0.5f) * cam.orthographicSize * cam.aspect * 2, (Input.touches[0].position.y / h - 0.5f) * cam.orthographicSize * 2, 0);
             //        }
             //#endif
-            Debug.DrawLine(Target, transform.position, Color.black);
-
 
             Vector3 vec = Target - transform.position;
             vec.Normalize();
-
-
 
             float distance = Vector3.Distance(Target, transform.position);
             float force = 0;
@@ -126,26 +121,16 @@ public class SnakeController : MonoBehaviour
             }*/
 
             // Death Walls //
-            if (cam.WorldToScreenPoint(Tail[Tail.Count - 1]).x < 0 || cam.WorldToScreenPoint(Tail[Tail.Count - 1]).x > Screen.width)
+            if (Camera.main.WorldToScreenPoint(Tail[Tail.Count - 1]).x < 0 || Camera.main.WorldToScreenPoint(Tail[Tail.Count - 1]).x > Screen.width)
             {
-                // Test Portals //
-                //float offset = transform.position.x > 0 ? 0.5f : -0.5f;
-                //transform.position = new Vector3(-transform.position.x + offset, transform.position.y, 0);
-
-                GameOver over = GameObject.Find("GameOver").GetComponent<GameOver>();
-                over.Over();
-                goto Draw;
+                //App.Instance.SetScreen("Game Over");
             }
-            else if (cam.WorldToScreenPoint(Tail[Tail.Count - 1]).y < 0 || cam.WorldToScreenPoint(Tail[Tail.Count - 1]).y > Screen.height)
+            else if (Camera.main.WorldToScreenPoint(Tail[Tail.Count - 1]).y < 0 || Camera.main.WorldToScreenPoint(Tail[Tail.Count - 1]).y > Screen.height)
             {
-                GameOver over = GameObject.Find("GameOver").GetComponent<GameOver>();
-                over.Over();
-                goto Draw;
+                //App.Instance.SetScreen("Game Over");
             }
         }
 
-    Draw:
-        int p;
         BuildMesh();
     }
 
@@ -158,7 +143,6 @@ public class SnakeController : MonoBehaviour
             Gizmos.color = Color.grey;
             //Gizmos.DrawWireSphere(Tail[i], 0.5f);
         }
-
     }
 
     //============================================================================================================================================//
@@ -167,9 +151,8 @@ public class SnakeController : MonoBehaviour
         if (DrawGuide)
         {
             // Get Game Camera //
-            Camera cam = GameObject.Find("GameCamera").camera;
-            Vector3 target = cam.WorldToScreenPoint(Target);
-            Vector3 pos1 = cam.WorldToScreenPoint(transform.position);
+            Vector3 target = Camera.main.WorldToScreenPoint(Target);
+            Vector3 pos1 = Camera.main.WorldToScreenPoint(transform.position);
 
             // Draw Guides //
             GUI.color = new Color(GuideColor.r, GuideColor.g, GuideColor.b, 0.1f);

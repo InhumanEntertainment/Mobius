@@ -8,9 +8,6 @@ public class MobiusStrip : MonoBehaviour
     public Vector3 Velocity = Vector3.zero;
     public Vector3 Target = Vector3.up;
 
-    public float Speed = 10;
-    public float Rotation = 10;
-    public int TailMax = 50;
     public float TailWidthStart = 1f;
     public float TailWidthEnd = 1f;
     public bool DrawWireframe = false;
@@ -27,8 +24,8 @@ public class MobiusStrip : MonoBehaviour
         for (int i = 0; i < looplength; i++)
         {
             float v = (float)i / looplength * Mathf.Deg2Rad * 360;
-            float x = Mathf.Sin(v*1.3f) * 1;
-            float y = Mathf.Cos(v*6) * 1;
+            float x = Mathf.Sin(v) * 0.4f;
+            float y = Mathf.Cos(v) * 0.4f;
 
             loop.Add(new Vector3(x, y, 0));
         }
@@ -84,26 +81,27 @@ public class MobiusStrip : MonoBehaviour
     void Update()
     {
         // Get Game Camera //
-        Camera cam = GameObject.Find("GameCamera").camera;
+        Camera cam = Camera.main;
         var w = cam.pixelWidth;
         var h = cam.pixelHeight;
 
 
         // Logic //
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameButton.InUse)
         {
-            looptarget = new Vector3((Input.mousePosition.x / w - 0.5f) * cam.orthographicSize * cam.aspect * 2, (Input.mousePosition.y / h - 0.5f) * cam.orthographicSize * 2, 0);
+            looptarget = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            looptarget.z = 0;
             pos = GetClosestPoint(looptarget);
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameButton.InUse)
         {
-            looptarget = new Vector3((Input.mousePosition.x / w - 0.5f) * cam.orthographicSize * cam.aspect * 2, (Input.mousePosition.y / h - 0.5f) * cam.orthographicSize * 2, 0);
-
+            looptarget = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            looptarget.z = 0;
 
             // For each point on loop //
             for (int i = 0; i < looplength; i++)
             {
-                float pointamount = 1 - Mathf.Min((float)GetDistance(i) / looplength * 8, 1);
+                float pointamount = 1 - Mathf.Min((float)GetDistance(i) / looplength * 30, 1);
                 pointamount = Mathf.Pow(pointamount, 2);
 
                 Vector3 vec = looptarget - loop[i];
@@ -111,9 +109,9 @@ public class MobiusStrip : MonoBehaviour
 
                 float distance = Vector3.Distance(looptarget, loop[i]);
                 float force = 0;
-                if (distance < 50)
+                if (distance < 2)
                 {
-                    force = (50f - distance) / 50f;
+                    force = (2f - distance) / 2f;
                     force = (float)Mathf.Pow(force, 1);
                     //force *= (1f * pointamount);
 
@@ -122,7 +120,7 @@ public class MobiusStrip : MonoBehaviour
                         force = 0.7f;
                     }*/
 
-                    if (pointamount > 0.7f)
+                    if (pointamount > 0.05f)
                     {
                         loop[i] = looptarget;
                     }
@@ -142,12 +140,12 @@ public class MobiusStrip : MonoBehaviour
         {
             Vector3 vec1 = loop[i] - loop[index(i - 3)];
             vec1.Normalize();
-            float distance1 = (float)1 - Vector3.Distance(loop[index(i - 3)], loop[i]) / 4;
+            float distance1 = (float)0.04f - Vector3.Distance(loop[index(i - 3)], loop[i]) / 4;
             distance1 = Mathf.Max(0, distance1);
 
             Vector3 vec2 = loop[i] - loop[index(i + 3)];
             vec2.Normalize();
-            float distance2 = (float)1 - Vector3.Distance(loop[index(i + 3)], loop[i]) / 4;
+            float distance2 = (float)0.04f - Vector3.Distance(loop[index(i + 3)], loop[i]) / 4;
             distance2 = Mathf.Max(0, distance2);
 
             Vector3 force = (vec1 * distance1 + vec2 * distance2) * 1f;
@@ -220,19 +218,19 @@ public class MobiusStrip : MonoBehaviour
 
                 vector.Normalize();
 
-                Vector3 left = new Vector3(vector.y * -1, vector.x, 0);
-                Vector3 right = new Vector3(vector.y, vector.x * -1, 0);
+                Vector3 left = new Vector3(vector.y * -1, vector.x, -1);
+                Vector3 right = new Vector3(vector.y, vector.x * -1, -1);
 
                 // from 0 to 1 along the length of the tail //
                 float v = 1 - ((float)i / (Tail.Count - 1));
                 float tailwidth = Mathf.Lerp(TailWidthStart, TailWidthEnd, v);
 
-                vertices[i * 2] = Tail[i] + left * tailwidth;
-                vertices[i * 2 + 1] = Tail[i] + right * tailwidth;
+                vertices[i * 2] = Tail[i] + left * tailwidth + transform.position;
+                vertices[i * 2 + 1] = Tail[i] + right * tailwidth + transform.position;
 
                 UVScroll += Time.deltaTime * 0.02f;
-                uv[i * 2] = new Vector2(0, v * 16 + UVScroll);
-                uv[i * 2 + 1] = new Vector2(1, v * 16 + UVScroll);
+                uv[i * 2] = new Vector2(0, v * 64 + UVScroll);
+                uv[i * 2 + 1] = new Vector2(1, v * 64 + UVScroll);
 
                 //Debug.DrawLine(Tail[i] + left, Tail[i] + right, Color.blue);
             }

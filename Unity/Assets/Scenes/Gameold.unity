@@ -4,13 +4,12 @@
 SceneSettings:
   m_ObjectHideFlags: 0
   m_PVSData: 
-  m_QueryMode: 1
   m_PVSObjectsArray: []
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
-    viewCellSize: 1
-    bakeMode: 2
-    memoryUsage: 10485760
+    smallestOccluder: 5
+    smallestHole: .25
+    backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
@@ -23,11 +22,12 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 0}
   m_ObjectHideFlags: 0
 --- !u!127 &3
-GameManager:
+LevelGameManager:
   m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
@@ -133,6 +133,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!81 &561263610
 AudioListener:
   m_ObjectHideFlags: 0
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   tweakMode: 0
   screenBlendMode: 1
   hdr: 0
@@ -244,6 +246,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &623306193
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -273,6 +278,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b1d8a01737db324dba3d850cf74c3dc, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Tail: []
   Velocity: {x: 0, y: 0, z: 0}
   Target: {x: 0, y: 0, z: 0}
@@ -317,7 +323,7 @@ GameObject:
   m_Icon: {fileID: 545062253, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &722802086
 Transform:
   m_ObjectHideFlags: 0
@@ -339,6 +345,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a7707f8cc97cc46a5c0f018c4dda39, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   HexagonTexture: {fileID: 2800000, guid: aef9fb981ad62ba499614f2c81180bac, type: 3}
   height: 100
   scale: 1
@@ -426,6 +433,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b701a5c07c70ff64f906a49ef53f3d91, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Texture: {fileID: 2800000, guid: 4579f9bea4b48b845958da717e028126, type: 3}
   Color: {r: 1, g: 1, b: 1, a: 1}
   FadeTime: .5
@@ -493,6 +501,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272c159d6494a574aa26321d12ef4b07, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Texture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
 --- !u!131 &1352924846
 GUITexture:
@@ -551,6 +560,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 884121d8ec920b7468c6a996cae0cffb, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Paused: 0
   Texture: {fileID: 2800000, guid: b487fead729b7b54b95560cac679158a, type: 3}
   PauseButton:
@@ -668,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1748889831
 Transform:
   m_ObjectHideFlags: 0
@@ -698,6 +708,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1748889833
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -751,6 +764,9 @@ GUIText:
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!114 &1768413050
@@ -763,6 +779,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f5dbf4b72645d043bae075a3a62f63c, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Score: 0
   FPS: 30
 --- !u!1 &1789052101
@@ -813,6 +830,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -897,6 +916,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1921910197
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -929,6 +951,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c416d1f21ea307c4a9138dd5dcea8a9c, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   EffectSpawn: {fileID: 19800000, guid: 05bc7e1433f8fb34180f369b41686358, type: 2}
   EffectPickup: {fileID: 19800000, guid: 05bc7e1433f8fb34180f369b41686358, type: 2}
   TailSegments: 50

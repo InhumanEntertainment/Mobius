@@ -22,19 +22,19 @@ public class Pickup : MonoBehaviour
 	}
 
     //============================================================================================================================================//
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject == GameObject.Find("Snake"))
+        if (collider.tag == "Player")
         {
             Destroy(gameObject);
-            Camera cam = GameObject.Find("GameCamera").camera;
+            Camera cam = Camera.main;
             Vector3 pos = new Vector3((Random.value * 0.8f - 0.4f) * cam.orthographicSize * cam.aspect * 2, (Random.value * 0.8f - 0.4f) * cam.orthographicSize * 2, 0);
 
             Spawn();
 
             
 
-            GameObject mobius = GameObject.Find("Snake");
+            GameObject mobius = GameObject.Find("Mobius");
             SnakeController snake = mobius.GetComponent<SnakeController>();
 
             // Lengthen Tail //
@@ -48,38 +48,11 @@ public class Pickup : MonoBehaviour
     //============================================================================================================================================//
     void Spawn()
     {
-        //Hexagons hex = GameObject.Find("Hexagons").GetComponent<Hexagons>();
-        Camera cam = GameObject.Find("GameCamera").camera;
-        
-        // Create Inactive Hexagon List //
-        //List<int> Inactive = new List<int>();
-
-        /*for (int i = 0; i < hex.All.Count; i++)
-		{
-            if (hex.All[i].Active == 0)
-	        {
-		        Inactive.Add(i);
-	        }			 
-		}
-
-        // Get Random Position //
-        int r = (int)(Random.value * (Inactive.Count - 1));
-
-        Vector3 pos = hex.All[Inactive[r]].Position;
-        pos += hex.offset;
-        pos = new Vector3(pos.x, Screen.height - pos.y, 0);
-        
-        pos = cam.ScreenToWorldPoint(pos);
-
-        pos.z = 0;
-        print(pos);
-         */
         Vector3 pos = new Vector3(Screen.width * Random.value, Screen.height * Random.value, 0);
-        pos = cam.ScreenToWorldPoint(pos);
+        pos = Camera.main.ScreenToWorldPoint(pos);
         pos.z = 0;
         
         GameObject pickup = (GameObject)Resources.Load("Pickup");
-        Quaternion q = Quaternion.Euler(new Vector3(-90, 0, 0));
-        GameObject.Instantiate(pickup, pos, q);
+        GameObject.Instantiate(pickup, pos, Quaternion.identity);
     }
 }
