@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSpawn: {fileID: 19800000, guid: 05bc7e1433f8fb34180f369b41686358, type: 2}
   EffectPickup: {fileID: 19800000, guid: 05bc7e1433f8fb34180f369b41686358, type: 2}
-  TailSegments: 50
+  TailSegments: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

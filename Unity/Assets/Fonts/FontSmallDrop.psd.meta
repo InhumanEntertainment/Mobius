@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: 7ec03d01f26433440b38ee1247e6a26d
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FontSmallDrop_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 48
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_10
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 48
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_18
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_19
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_21
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_23
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_24
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_25
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_26
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 36
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_27
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_29
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_30
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_31
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_32
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_33
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_34
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_36
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 24
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_38
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 24
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_39
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 24
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_40
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 24
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_41
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 24
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_42
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 24
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_43
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_44
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_45
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 12
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_46
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 12
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_47
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 12
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_48
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_49
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_50
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 12
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_51
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 12
+        width: 3
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: FontSmallDrop_52
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

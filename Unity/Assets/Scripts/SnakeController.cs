@@ -31,6 +31,9 @@ public class SnakeController : MonoBehaviour
 		Application.targetFrameRate = 60;
         mesh = new Mesh();
         Tail.Add(Vector3.zero);
+
+        MeshFilter m = GetComponent<MeshFilter>();
+        m.mesh = mesh;
     }
 
     //============================================================================================================================================//
@@ -176,6 +179,7 @@ public class SnakeController : MonoBehaviour
         {
             // Then create triangles //
             Vector3[] vertices = new Vector3[Tail.Count * 2];
+            Color[] colors = new Color[Tail.Count * 2];
             Vector2[] uv = new Vector2[Tail.Count * 2];
             int[] triangles = new int[(Tail.Count - 1) * 6];
             
@@ -206,11 +210,16 @@ public class SnakeController : MonoBehaviour
                 float v = 1 - ((float)i / (Tail.Count - 1));
                 float tailwidth = Mathf.Lerp(TailWidthStart, TailWidthEnd, v);
 
-                vertices[i * 2] = Tail[i] + left * tailwidth;
-                vertices[i * 2 + 1] = Tail[i] + right * tailwidth;
+                vertices[i * 2] = Tail[i] + left * tailwidth - transform.position;
+                vertices[i * 2 + 1] = Tail[i] + right * tailwidth - transform.position;
 
-                uv[i * 2] = new Vector2(0, v * 1);
-                uv[i * 2 + 1] = new Vector2(1, v * 1);
+                colors[i * 2] = Color.white;
+                colors[i * 2 + 1] = Color.white;
+
+
+                float uvmax = Tail.Count / 20f;
+                uv[i * 2] = new Vector2(0, v * uvmax);
+                uv[i * 2 + 1] = new Vector2(1, v * uvmax);
 
                 //Debug.DrawLine(Tail[i] + left, Tail[i] + right, Color.blue);
             }
@@ -245,10 +254,11 @@ public class SnakeController : MonoBehaviour
             mesh.Clear();
             mesh.vertices = vertices;
             mesh.uv = uv;
-            mesh.triangles = triangles;
-            
-            MeshFilter m = GetComponent<MeshFilter>();
-            Graphics.DrawMesh(mesh, Matrix4x4.identity, renderer.material, 0);
+            mesh.colors = colors;
+            mesh.triangles = triangles;  
+          
+
+            //Graphics.DrawMesh(mesh, Matrix4x4.identity, renderer.material, 0);
         }       
     }
 }

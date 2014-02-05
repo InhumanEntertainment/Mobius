@@ -90,7 +90,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 188
-        y: 305
+        y: 203
         width: 20
         height: 22
       alignment: 0
@@ -99,7 +99,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 218
-        y: 302
+        y: 201
         width: 23
         height: 25
       alignment: 0
@@ -111,6 +111,78 @@ TextureImporter:
         y: 0
         width: 180
         height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Rate Down
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 302
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Facebook Down
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 302
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Twitter Down
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 302
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: About Down
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 302
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Rate Over
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 272
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Facebook Over
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 272
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Twitter Over
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 272
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: About Over
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 272
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: .5, y: .5}
   spritePackingTag: 

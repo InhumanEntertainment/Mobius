@@ -14,10 +14,12 @@ public class Anchor : MonoBehaviour
 		MiddleRight,
 		BottomLeft,
 		BottomCenter,
-		BottomRight
+		BottomRight,
+        Custom
 	}
 
 	public AnchorPoint Location = AnchorPoint.MiddleCenter;
+    public Vector2 CustomLocation = new Vector2(0.5f, 0.5f);
 	Vector3[] Vectors = 
 	{
 		new Vector3(0, 1, 0),
@@ -34,16 +36,26 @@ public class Anchor : MonoBehaviour
 	//=======================================================================================================================================================/
 	void Update () 
 	{
-        Vector3 cam = Vectors[(int)Location];
-        if (Location == AnchorPoint.TopLeft || Location == AnchorPoint.MiddleLeft || Location == AnchorPoint.BottomLeft)
-            cam += new Vector3(Camera.main.rect.xMin, 0, 0);
-        else if (Location == AnchorPoint.TopRight || Location == AnchorPoint.MiddleRight || Location == AnchorPoint.BottomRight)
-            cam -= new Vector3(Camera.main.rect.xMin, 0, 0);
+        Vector3 offset;
+        if (Location == AnchorPoint.Custom)
+        {
+            print(Camera.main.rect.width);
+            offset = transform.parent.position + Vector3.Scale(CustomLocation, new Vector3(Camera.main.rect.width * Screen.width, Camera.main.rect.height * Screen.height, 0)) + new Vector3(Camera.main.rect.xMin * Screen.width, Camera.main.rect.yMin, 0);
+        }
+        else
+        {
+            Vector3 cam = Vectors[(int)Location];
+            if (Location == AnchorPoint.TopLeft || Location == AnchorPoint.MiddleLeft || Location == AnchorPoint.BottomLeft)
+                cam += new Vector3(Camera.main.rect.xMin, 0, 0);
+            else if (Location == AnchorPoint.TopRight || Location == AnchorPoint.MiddleRight || Location == AnchorPoint.BottomRight)
+                cam -= new Vector3(Camera.main.rect.xMin, 0, 0);
 
-        // Positioning //
-        Vector3 offset = transform.parent.position + Vector3.Scale(cam, new Vector3(Screen.width, Screen.height, 0));
-		Vector3 wh = Camera.main.ScreenToWorldPoint(offset);
-		wh.z = 0;
-		transform.localPosition = wh;
+            // Positioning //
+            offset = transform.parent.position + Vector3.Scale(cam, new Vector3(Screen.width, Screen.height, 0));         
+        }
+
+        Vector3 wh = Camera.main.ScreenToWorldPoint(offset);
+        wh.z = 0;
+        transform.localPosition = wh;
 	}
 }

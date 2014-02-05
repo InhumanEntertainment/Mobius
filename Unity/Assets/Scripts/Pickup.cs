@@ -18,7 +18,7 @@ public class Pickup : MonoBehaviour
     void Update() 
     {
         //transform.Rotate(new Vector3(0, 0, 8f));
-        transform.RotateAroundLocal(Vector3.forward, 5f * Time.deltaTime);                                             
+        //transform.RotateAroundLocal(Vector3.forward, 5f * Time.deltaTime);                                             
 	}
 
     //============================================================================================================================================//
@@ -34,8 +34,7 @@ public class Pickup : MonoBehaviour
 
             
 
-            GameObject mobius = GameObject.Find("Mobius");
-            SnakeController snake = mobius.GetComponent<SnakeController>();
+            SnakeController snake = Game.Instance.Player;
 
             // Lengthen Tail //
             snake.TailMax += TailSegments;
