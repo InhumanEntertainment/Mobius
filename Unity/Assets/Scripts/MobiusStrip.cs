@@ -229,8 +229,8 @@ public class MobiusStrip : MonoBehaviour
                 vertices[i * 2 + 1] = Tail[i] + right * tailwidth + transform.position;
 
                 UVScroll += Time.deltaTime * 0.02f;
-                uv[i * 2] = new Vector2(0, v * 64 + UVScroll);
-                uv[i * 2 + 1] = new Vector2(1, v * 64 + UVScroll);
+                uv[i * 2] = new Vector2(0, v * 20 + UVScroll);
+                uv[i * 2 + 1] = new Vector2(1, v * 20 + UVScroll);
 
                 //Debug.DrawLine(Tail[i] + left, Tail[i] + right, Color.blue);
             }

@@ -185,5 +185,23 @@ TextureImporter:
         height: 28
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: Marker
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 244
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Marker Dot
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 250
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

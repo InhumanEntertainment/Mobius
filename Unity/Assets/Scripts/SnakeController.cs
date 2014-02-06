@@ -16,11 +16,6 @@ public class SnakeController : MonoBehaviour
     public float TailWidthEnd = 1f;   
     public bool DrawWireframe = false;
 
-    public bool DrawGuide;
-    public Color GuideColor = new Color(0.7f, 0.8f, 1);
-    public Texture TetureGuideDot;
-    public Texture TetureGuidePosition;
-
     float DistanceTraveled = 0;
     public float StepSpacing = 0.05f;
             
@@ -102,24 +97,13 @@ public class SnakeController : MonoBehaviour
                 }
             }
 
-            //print(Velocity.magnitude);
-
-            // Rotate Head Cube //
-            //GameObject cube = GameObject.Find("Cube");
-            //cube.transform.LookAt(transform.position);
-            //cube.transform.position = transform.position;
-
-            // Death Tail //
-            
+            // Death Tail //     
             /*for (int i = 0; i < Tail.Count - 1; i++)
             {
-                if ((Tail[i] - Tail[Tail.Count - 1]).magnitude < 0.6f)
+                if ((Tail[i] - Tail[Tail.Count - 1]).magnitude < TailWidthStart)
                 {
-                    Tail.Clear();
-                    print("Tail");
-                    GameOver over = GameObject.Find("GameOver").GetComponent<GameOver>();
-                    over.Over();
-                    goto Draw;
+                    //Tail.Clear();
+                    print("GAME OVER!");
                 }
             }*/
 
@@ -145,30 +129,6 @@ public class SnakeController : MonoBehaviour
         {
             Gizmos.color = Color.grey;
             //Gizmos.DrawWireSphere(Tail[i], 0.5f);
-        }
-    }
-
-    //============================================================================================================================================//
-    void OnGUI()
-    {
-        if (DrawGuide)
-        {
-            // Get Game Camera //
-            Vector3 target = Camera.main.WorldToScreenPoint(Target);
-            Vector3 pos1 = Camera.main.WorldToScreenPoint(transform.position);
-
-            // Draw Guides //
-            GUI.color = new Color(GuideColor.r, GuideColor.g, GuideColor.b, 0.1f);
-            GUI.DrawTexture(new Rect(target.x - 32, Screen.height - target.y - 32, 64, 64), TetureGuidePosition);        
-            
-            // Draw Markers //
-            GUI.color = new Color(GuideColor.r, GuideColor.g, GuideColor.b, 1f);
-            for (float i = 0; i < 1; i += 0.05f)
-            {
-                Vector3 pos = pos1 * i + target * (1.0f - i);
-                pos.y = Screen.height - pos.y;
-                GUI.DrawTexture(new Rect(pos.x - 2, pos.y - 2, 4, 4), TetureGuideDot);
-            }
         }
     }
 

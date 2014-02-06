@@ -103,13 +103,13 @@ MonoBehaviour:
   Speed: 2
   Rotation: 70
   TailMax: 20
-  TailWidthStart: .0199999996
-  TailWidthEnd: .0199999996
+  TailWidthStart: .0399999991
+  TailWidthEnd: .0399999991
   DrawWireframe: 0
   DrawGuide: 0
   GuideColor: {r: .699999988, g: .800000012, b: 1, a: 1}
-  TetureGuideDot: {fileID: 2800000, guid: 18508aaea8550ef4c90a0c79a198f819, type: 3}
-  TetureGuidePosition: {fileID: 2800000, guid: 29cd0e7f13e62184782faf718f2f7dc0, type: 3}
+  TetureGuideDot: {fileID: 2800000, guid: 08d5cb781dc54d340a2ba5f0d2aa6768, type: 3}
+  TetureGuidePosition: {fileID: 2800000, guid: fb2c0007b3d726e43ba0ab7682ed70c2, type: 3}
   StepSpacing: .0199999996
 --- !u!114 &11400002
 MonoBehaviour:

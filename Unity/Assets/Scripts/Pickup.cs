@@ -11,7 +11,7 @@ public class Pickup : MonoBehaviour
     //============================================================================================================================================//
     void Start() 
     {
-        transform.Rotate(new Vector3(0, 0, Random.value * 10));
+        //transform.Rotate(new Vector3(0, 0, Random.value * 10));
 	}
 
     //============================================================================================================================================//
@@ -32,6 +32,7 @@ public class Pickup : MonoBehaviour
 
             Spawn();
 
+            Game.Instance.AddScore(1);
             
 
             SnakeController snake = Game.Instance.Player;

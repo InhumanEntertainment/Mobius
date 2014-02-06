@@ -68,6 +68,7 @@ public class MenuAnimation : MonoBehaviour
             currentState.enabled = true;
 
             AnimTime = 0F;
+            Update();
             IsPlaying = true;
         }
     }

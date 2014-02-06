@@ -38,10 +38,7 @@ public class Anchor : MonoBehaviour
 	{
         Vector3 offset;
         if (Location == AnchorPoint.Custom)
-        {
-            print(Camera.main.rect.width);
             offset = transform.parent.position + Vector3.Scale(CustomLocation, new Vector3(Camera.main.rect.width * Screen.width, Camera.main.rect.height * Screen.height, 0)) + new Vector3(Camera.main.rect.xMin * Screen.width, Camera.main.rect.yMin, 0);
-        }
         else
         {
             Vector3 cam = Vectors[(int)Location];

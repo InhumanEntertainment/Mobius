@@ -146,6 +146,7 @@ public class Game : GameScreen
         Time.timeScale = 0f;
         Audio.Music.Pause();
         App.Instance.SetScreen("Pause");
+        gameObject.SetActive(false);
     }
 
     //============================================================================================================================================================================================//

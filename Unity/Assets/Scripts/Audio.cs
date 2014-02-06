@@ -107,7 +107,7 @@ public class Audio : MonoBehaviour
 	{
 		if (Sound != null)
 		{
-			//print("Sound: " + sound);               
+			print("Sound: " + sound);               
 			Sound.PlayOneShot(Audio.Instance.SoundClips[sound]);
 		}
 	}
